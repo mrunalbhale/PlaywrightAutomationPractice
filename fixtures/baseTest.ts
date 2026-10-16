@@ -10,7 +10,7 @@ type Fixtures = {
     context: BrowserContext;
 };
 
-const test = baseTest.extend<{
+export const test = baseTest.extend<{
     fixtures: Fixtures;
     app: BasePage;
 }>({

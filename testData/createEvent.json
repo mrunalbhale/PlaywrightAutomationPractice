@@ -1,0 +1,9 @@
+{
+    "Title" : "New Event",
+    "Description" : "This is a test event created using Playwright.",
+    "City" : "Pune",
+    "Venue" : "Maharashtra",
+    "Event date and time" : "2026-10-30T14:25",
+    "Price" : "1000",
+    "Total Seats" : "100"
+}
