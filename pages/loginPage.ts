@@ -1,4 +1,4 @@
-import {expect, Page, Locator, Browser, BrowserContext} from '@playwright/test';
+import { expect, Page, Locator, Browser, BrowserContext } from '@playwright/test';
 import { email, password, URL_EventHub, URL_EventHub_APILogin } from '../constants';
 //import { BasePage } from './basePage';
 
@@ -6,12 +6,12 @@ export class LoginPage {
     browser: Browser;
     page: Page;
     context: BrowserContext;
-    readonly  emailInput : Locator;
-    readonly passwordInput : Locator;
-    readonly loginButton : Locator;
+    readonly emailInput: Locator;
+    readonly passwordInput: Locator;
+    readonly loginButton: Locator;
     contextWithStorageState: BrowserContext;
 
-    constructor(page: Page, browser: Browser, context: BrowserContext, contextWithStorageState: BrowserContext ) {
+    constructor(page: Page, browser: Browser, context: BrowserContext, contextWithStorageState: BrowserContext) {
         this.browser = browser;
         this.context = context;
         this.contextWithStorageState = contextWithStorageState;
@@ -33,13 +33,13 @@ export class LoginPage {
         await this.emailInput.fill(email);
         await this.passwordInput.fill(password);
         await this.loginButton.click();
-        await this.context.storageState({path:'storageState.json'});
+        await this.context.storageState({ path: 'storageState.json' });
     }
 
-    async loginWithStorageState(){
+    async loginWithStorageState() {
         await this.page.goto(URL_EventHub);
         await this.login();
-        this.contextWithStorageState = await this.browser.newContext({storageState:'storageState.json'});
+        this.contextWithStorageState = await this.browser.newContext({ storageState: 'storageState.json' });
     }
 
 }

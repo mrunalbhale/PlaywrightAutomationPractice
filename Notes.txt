@@ -1,0 +1,42 @@
+To debug - ctrl+shift+P -> search for debug npm script.
+-------------------------------------------------------------------------
+
+Interception of an API response - Identify at what step we are getting a response.
+So before that step, try to fake it. Method used to fake a response - route().
+route("url for which we want to fake a response",
+ async route =>{
+    get actual response,
+    get the fake body,
+    route.fulfill({
+        original response
+        fake body in json format
+    })
+ }
+)
+---------------------------------------------------------------------------
+
+to take screenshot,
+await page.screenshot({path:'screenshot.png'})
+To take screenshot of particular element,
+await page.locator().screenshot({path:'path of ss'})
+
+Visual Testing-
+expect (await page.screenshot()).toMatchSnapshot('referencescreenshot.png')
+---------------------------------------------------------------------------
+package to read/write/manupulate excel and json file - exceljs
+------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------playwright.config.ts file options------------------------------------------
+viewport:{width:720,height:720}
+property to be added in playwright.config.ts to change the dimenssions of the screen that will be opened when the browser launches.
+{
+      name: 'Mobile Safari',
+      use: { ...devices['iPhone 15 Pro Max'] },
+}-- write ...devices[] and it will give us a list of mobile devices available and the script will run on the screen having dimenssions similar to that mobile device.
+---------------------------------------------------------------------------
+For SSL certification error, to handle that, add property in use-
+ignoreHttpsErrors:true
+If URL asks for location permission, i.e. a pop up coming to allow the location, add property under use,
+permissions:['geolocation']-- it will click on allow button.
+---------------------------------------------------------------------------
+video:'retain-on-failure'- add this property in use section.
+

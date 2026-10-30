@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test tests/apiTesting.spec.ts --headed --project=chromium"
+    "test": "npx playwright test tests/createEvent.spec.ts --headed --project=chromium",
+    "custom_configTest": "npx playwright test tests/createEvent.spec.ts --config playwright.configCustom.ts"
   },
   "keywords": [],
   "author": "Mrunal",
@@ -15,6 +16,7 @@
     "@types/node": "^25.9.9"
   },
   "dependencies": {
-    "dotenv": "^18.0.7"
+    "dotenv": "^18.0.7",
+    "exceljs": "^3.4.0"
   }
 }

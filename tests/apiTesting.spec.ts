@@ -36,3 +36,7 @@ test('Create an event using an API call', async ({app}) => {
     const responseBodyJson = await response.json();
     console.log(`Event created: ${JSON.stringify(responseBodyJson)}`);
 });
+
+test('customFixtureUse',async({loginUsingAPICall,createOrder})=>{
+
+})

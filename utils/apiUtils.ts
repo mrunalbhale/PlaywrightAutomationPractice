@@ -29,6 +29,7 @@ export class APIUtils {
                 'Authorization': 'Bearer ' + token
             }
         });
+        console.log(response);
         return response;
     }
 }
